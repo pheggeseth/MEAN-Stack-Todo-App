@@ -41,7 +41,7 @@ Steps to get the development environment running.
       - [x] save POST data to database
   - [x] get all todos after successfully adding new todo
 - [ ] It should be able to 'Complete' and 'Delete' each todo
-  - [ ] add Complete and Delete buttons to each list item
+  - [x] add Complete and Delete buttons to each list item
   - [ ] Implement Complete
     - [ ] clicking the Complete button should call completeTodo function, passing in the todo ID
     - [ ] completeTodo function should start HTTP PUT request

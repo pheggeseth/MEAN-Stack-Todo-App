@@ -20,14 +20,11 @@ todoApp.controller('TodoController', function($http) {
 
   vm.addNewTodo = function() {
     console.log('in addNewTodo');
-    
     if (!vm.newTodo.text) {
       console.log('new todo must have text');
       return;
     }
-    
     vm.newTodo.completed = false;
-
     console.log('/todos POST request');
     $http({
       method: 'POST',
@@ -39,6 +36,14 @@ todoApp.controller('TodoController', function($http) {
     }).catch(function(error) {
       console.log('/todos POST error:', error);
     });
+  };
+
+  vm.completeTodo = function(id) {
+    console.log('complete todo:', id);
+  };
+
+  vm.deleteTodo = function(id) {
+    console.log('delete todo:', id);
   };
   
   vm.getTodosFromDB();
