@@ -1,11 +1,6 @@
 const consoleLogs = false;
 const todoApp = angular.module('todoApp', []);
 
-document.addEventListener('DOMContentLoaded', function() {
-  swal("Hello world!");
-});
-
-
 todoApp.controller('TodoController', function($http) {
   vm = this;
 
@@ -58,7 +53,19 @@ todoApp.controller('TodoController', function($http) {
     });
   };
 
-  vm.deleteTodo = function(id) {
+  vm.handleDeleteClick = function(id) {
+    swal({
+      title: "Are you sure?",
+      text: "Deleting a todo is permanent. No take backs!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then(deleteConfirmed => {
+      if (deleteConfirmed) deleteTodo(id);
+    });
+  }
+
+  function deleteTodo(id) {
     if(consoleLogs) console.log('delete todo:', id);
     $http({
       method: 'DELETE',

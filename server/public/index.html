@@ -21,7 +21,7 @@
       <li ng-class="{completed: todo.completed}" ng-repeat="todo in tc.todos">
         {{todo.text}}
         <button ng-click="tc.completeTodo(todo._id)">Complete</button>
-        <button ng-click="tc.deleteTodo(todo._id)">Delete</button>
+        <button ng-click="tc.handleDeleteClick(todo._id)">Delete</button>
       </li>
     </ul>
   </div>
