@@ -1,4 +1,4 @@
-const consoleLogs = false;
+const consoleLogs = true;
 const todoApp = angular.module('todoApp', []);
 
 todoApp.controller('TodoController', function($http) {
@@ -21,8 +21,9 @@ todoApp.controller('TodoController', function($http) {
 
   vm.addNewTodo = function() {
     if(consoleLogs) console.log('in addNewTodo');
-    if (!vm.newTodo.text) {
-      if(consoleLogs) console.log('new todo must have text');
+    
+    if (!(vm.newTodo.text && vm.newTodo.category)) {
+      console.log('must complete all todo fields');
       return;
     }
     vm.newTodo.completed = false;
@@ -33,7 +34,7 @@ todoApp.controller('TodoController', function($http) {
       data: vm.newTodo
     }).then(function(response) {
       if(consoleLogs) console.log('/todos POST success:', response);
-      vm.newTodo.text = '';
+      vm.newTodo = {};
       vm.getTodosFromDB();
     }).catch(function(error) {
       if(consoleLogs) console.log('/todos POST error:', error);
