@@ -22,7 +22,7 @@ Steps to get the development environment running.
 
 - [x] Determine the Schema of the todo for MongoDB
 - [x] Configure todos.router.js with the appropriate schema and model for todos
-- [ ] Setup AngularJS app
+- [x] Setup AngularJS app
 - [ ] It should be able to display all todos
   - [ ] make function to get all todos
     - [ ] make HTTP GET request for all todos
