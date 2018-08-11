@@ -10,11 +10,11 @@ const todoSchema = new Schema({
 });
 const Todo = mongoose.model('Todo', todoSchema);
 
-// get route params with "/route/:paramName, then reference it as req.params.paramName"
+// ROUTES
 router.get('/', (req, res) => {
-  // model.find({}) // or something like model.find({amount: {$gt: something, $lt: something}})
-  //   .then(models => res.send(models))
-  //   .catch(error => res.sendStatus(500));
+  Todo.find({})
+    .then(todos => res.send(todos))
+    .catch(error => res.sendStatus(500));
 });
 
 router.post('/', (req, res) => {

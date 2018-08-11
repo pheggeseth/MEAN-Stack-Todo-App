@@ -24,12 +24,12 @@ Steps to get the development environment running.
 - [x] Configure todos.router.js with the appropriate schema and model for todos
 - [x] Setup AngularJS app
 - [ ] It should be able to display all todos
-  - [ ] make function to get all todos
-    - [ ] make HTTP GET request for all todos
-    - [ ] write todos GET route in todos.router.js
-      - [ ] successfully get all todos from database
-    - [ ] store todos from database in controller array to display on the DOM
-  - [ ] show all todos with ng-repeat on the DOM (unordered list)
+  - [x] make function to get all todos
+    - [x] make HTTP GET request for all todos
+    - [x] write todos GET route in todos.router.js
+      - [x] successfully get all todos from database
+    - [x] store todos from database in controller array
+  - [x] show all todos with ng-repeat on the DOM (unordered list)
 - [ ] It should be able to add a new todo
   - [ ] create HTML form
     - [ ] Input field for todo text

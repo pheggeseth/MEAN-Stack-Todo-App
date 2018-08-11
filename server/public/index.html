@@ -10,8 +10,13 @@
   <script src="./scripts/client.js"></script>
 </head>
 <body ng-app="todoApp">
-  <div class="container" ng-controller="TodoController">
-    
+  Hello world
+  <div class="container" ng-controller="TodoController as tc">
+    <ul>
+      <li ng-repeat="todo in tc.todos">
+        {{todo.text}}
+      </li>
+    </ul>
   </div>
 </body>
 </html>
