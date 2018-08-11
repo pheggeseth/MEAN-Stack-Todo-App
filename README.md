@@ -43,10 +43,10 @@ Steps to get the development environment running.
 - [ ] It should be able to 'Complete' and 'Delete' each todo
   - [x] add Complete and Delete buttons to each list item
   - [ ] Implement Complete
-    - [ ] clicking the Complete button should call completeTodo function, passing in the todo ID
-    - [ ] completeTodo function should start HTTP PUT request
-      - [ ] completeTodo PUT request should pass the ID to the server as data
-    - [ ] server should have a route for /todos PUT request
+    - [x] clicking the Complete button should call completeTodo function, passing in the todo ID
+    - [x] completeTodo function should start HTTP PUT request
+      - [x] completeTodo PUT request should pass the ID to the server as data
+    - [x] server should have a route for /todos PUT request
       - [ ] get the right todo from the database by id
       - [ ] change the todo.completed to true
       - [ ] save the todo back in the database

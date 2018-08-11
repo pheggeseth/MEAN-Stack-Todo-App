@@ -24,13 +24,14 @@ router.post('/', (req, res) => {
    .catch(error => res.sendStatus(500));
 });
 
-router.put('/:id', (req, res) => {
-  /* 
-  Model.findOne({_id: req.params.id})
-    .then(foundModel => {
-      //alter model then save in database
-    }).catch(error => res.sendStatus(500));
-  */
+router.put('/complete/:id', (req, res) => {
+  console.log('/todos/complete PUT received:', req.params.id);
+  res.sendStatus(201);
+  // Todo.findOne({_id: req.params.id})
+  //   .then(foundTodo => {
+  //     foundTodo.completed = true;
+  //     fountTodo.save()
+  //   }).catch(error => res.sendStatus(500));
 });
 
 router.delete('/:id', (req, res) => {

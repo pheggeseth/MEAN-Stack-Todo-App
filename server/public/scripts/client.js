@@ -40,6 +40,14 @@ todoApp.controller('TodoController', function($http) {
 
   vm.completeTodo = function(id) {
     console.log('complete todo:', id);
+    $http({
+      method: 'PUT',
+      url: '/todos/complete/' + id
+    }).then(function(response) {
+      console.log('/todos PUT success:', response);
+    }).catch(function(error) {
+      console.log('/todos PUT error:', error);
+    });
   };
 
   vm.deleteTodo = function(id) {
