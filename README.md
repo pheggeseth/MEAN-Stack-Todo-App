@@ -35,8 +35,9 @@ Steps to get the development environment running.
     - [x] Input field for todo text
     - [x] Submit button
     - [x] submit event should trigger submit handler function
-  - [ ] submit handler function should trigger HTTP POST request
-    - [ ] write todos POST route in todos.router.js
-      - [ ] successfully get data from POST request
-      - [ ] save POST data to database
+  - [x] submit handler function should trigger HTTP POST request
+    - [x] write todos POST route in todos.router.js
+      - [x] successfully get data from POST request
+      - [x] save POST data to database
+  - [ ] get all todos after successfully adding new todo
       

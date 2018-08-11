@@ -25,18 +25,20 @@ todoApp.controller('TodoController', function($http) {
       console.log('new todo must have text');
       return;
     }
-    console.log(vm.newTodo);
     
-    // console.log('/todos POST request');
-    // $http({
-    //   method: 'POST',
-    //   url: '/todos',
-    //   data: vm.newTodo
-    // }).then(function(response) {
-    //   console.log('/todos POST success:', response);
-    // }).catch(function(error) {
-    //   console.log('/todos POST error:', error);
-    // });
+    vm.newTodo.completed = false;
+
+    console.log('/todos POST request');
+    $http({
+      method: 'POST',
+      url: '/todos',
+      data: vm.newTodo
+    }).then(function(response) {
+      console.log('/todos POST success:', response);
+      vm.getTodosFromDB();
+    }).catch(function(error) {
+      console.log('/todos POST error:', error);
+    });
   };
   
   vm.getTodosFromDB();
