@@ -35,10 +35,10 @@ router.put('/complete/:id', (req, res) => {
     }).catch(error => res.sendStatus(500));
 });
 
-router.delete('/:id', (req, res) => {
-  // Model.findByIdAndRemove(req.params.id)
-  //  .then(response => res.sendStatus(201))
-  //  .catch(() => res.sendStatus(500));
+router.delete('/delete/:id', (req, res) => {
+  Todo.findByIdAndRemove(req.params.id)
+   .then(response => res.sendStatus(201))
+   .catch(() => res.sendStatus(500));
 });
 
 module.exports = router;

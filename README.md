@@ -50,7 +50,7 @@ Steps to get the development environment running.
       - [x] get the right todo from the database by id
       - [x] change the todo.completed to true
       - [x] save the todo back in the database
-    - [ ] upon todo PUT success, get all todos
-    - [ ] completed todos should add "completed" class (ng-class)
+    - [x] upon todo PUT success, get all todos
+    - [x] completed todos should add "completed" class (ng-class)
   - [ ] Implement Delete
       

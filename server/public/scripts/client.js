@@ -53,6 +53,14 @@ todoApp.controller('TodoController', function($http) {
 
   vm.deleteTodo = function(id) {
     console.log('delete todo:', id);
+    $http({
+      method: 'DELETE',
+      url: '/todos/delete/' + id
+    }).then(function(response) {
+      console.log('/todos DELETE success:', response);
+    }).catch(function(error) {
+      console.log('/todos DELETE error:', response);
+    });
   };
   
   vm.getTodosFromDB();
