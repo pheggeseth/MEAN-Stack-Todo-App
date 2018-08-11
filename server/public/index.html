@@ -10,16 +10,15 @@
   <script src="./scripts/client.js"></script>
 </head>
 <body ng-app="todoApp">
-  Hello world
+  <h1>AngularJs ToDo App</h1>
   <div class="container" ng-controller="TodoController as tc">
     <form ng-submit="tc.addNewTodo()">
-      <input type="text" name="text" id="textInput" ng-model="tc.newTodo.text" />
+      <input type="text" name="text" id="textInput" placeholder="Add Todo Here" ng-model="tc.newTodo.text" />
       <button>Add Todo</button>
     </form>
     <ul id="todo-list">
       <li ng-class="{completed: todo.completed}" ng-repeat="todo in tc.todos">
         {{todo.text}}
-        {{todo.completed}}
         <button ng-click="tc.completeTodo(todo._id)">Complete</button>
         <button ng-click="tc.deleteTodo(todo._id)">Delete</button>
       </li>

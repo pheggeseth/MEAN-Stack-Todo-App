@@ -40,9 +40,9 @@ Steps to get the development environment running.
       - [x] successfully get data from POST request
       - [x] save POST data to database
   - [x] get all todos after successfully adding new todo
-- [ ] It should be able to 'Complete' and 'Delete' each todo
+- [x] It should be able to 'Complete' and 'Delete' each todo
   - [x] add Complete and Delete buttons to each list item
-  - [ ] Implement Complete
+  - [x] Implement Complete
     - [x] clicking the Complete button should call completeTodo function, passing in the todo ID
     - [x] completeTodo function should start HTTP PUT request
       - [x] completeTodo PUT request should pass the ID to the server as data
@@ -52,5 +52,15 @@ Steps to get the development environment running.
       - [x] save the todo back in the database
     - [x] upon todo PUT success, get all todos
     - [x] completed todos should add "completed" class (ng-class)
-  - [ ] Implement Delete
+  - [x] Implement Delete
+
+### Stretch Goals
+
+- [ ] add Bootstrap to the page
+- [ ] create a confirmation prompt upon todo delete
+- [x] move inputs into form with ng-submit
+- [ ] add input validation to form
+- [ ] add category field to form
+  - [ ] allow user to filter by category
+- [ ] have completed tasks be brought to bottom of page
       
