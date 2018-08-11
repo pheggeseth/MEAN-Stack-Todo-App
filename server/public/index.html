@@ -17,21 +17,19 @@
     <form ng-submit="tc.addNewTodo()">
       <input type="text" name="text" id="textInput" placeholder="Add Todo Here" ng-model="tc.newTodo.text" />
       <select name="category" ng-model="tc.newTodo.category">
-        <option value="">Category:</option>
         <option value="Home">Home</option>
         <option value="Work">Work</option>
       </select>
       <button>Add Todo</button>
     </form>
     <h2>Todo List</h2>
-    Filter by category:
-    <select name="category-filter" ng-model="tc.categoryFilter">
+    Filter: <select name="category-filter" ng-model="tc.categoryFilter">
       <option value="">none</option>
       <option value="Home">Home</option>
       <option value="Work">Work</option>
     </select>
     <ul id="todo-list">
-      <li ng-class="{completed: todo.completed}" ng-repeat="todo in tc.todos | filter:tc.categoryFilter">
+      <li ng-class="{completed: todo.completed}" ng-repeat="todo in tc.todos | filter:{category: tc.categoryFilter} | orderBy:'completed'">
         {{todo.category}}: {{todo.text}}
         <button ng-click="tc.completeTodo(todo._id)">Complete</button>
         <button ng-click="tc.handleDeleteClick(todo._id)">Delete</button>
