@@ -45,6 +45,7 @@ todoApp.controller('TodoController', function($http) {
       url: '/todos/complete/' + id
     }).then(function(response) {
       console.log('/todos PUT success:', response);
+      vm.getTodosFromDB();
     }).catch(function(error) {
       console.log('/todos PUT error:', error);
     });
