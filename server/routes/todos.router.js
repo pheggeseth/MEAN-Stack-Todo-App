@@ -26,12 +26,13 @@ router.post('/', (req, res) => {
 
 router.put('/complete/:id', (req, res) => {
   console.log('/todos/complete PUT received:', req.params.id);
-  res.sendStatus(201);
-  // Todo.findOne({_id: req.params.id})
-  //   .then(foundTodo => {
-  //     foundTodo.completed = true;
-  //     fountTodo.save()
-  //   }).catch(error => res.sendStatus(500));
+  Todo.findOne({_id: req.params.id})
+    .then(foundTodo => {
+      foundTodo.completed = true;
+      foundTodo.save()
+        .then(response => res.sendStatus(201))
+        .catch(error => res.sendStatus(500));
+    }).catch(error => res.sendStatus(500));
 });
 
 router.delete('/:id', (req, res) => {

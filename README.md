@@ -47,9 +47,9 @@ Steps to get the development environment running.
     - [x] completeTodo function should start HTTP PUT request
       - [x] completeTodo PUT request should pass the ID to the server as data
     - [x] server should have a route for /todos PUT request
-      - [ ] get the right todo from the database by id
-      - [ ] change the todo.completed to true
-      - [ ] save the todo back in the database
+      - [x] get the right todo from the database by id
+      - [x] change the todo.completed to true
+      - [x] save the todo back in the database
     - [ ] upon todo PUT success, get all todos
     - [ ] completed todos should add "completed" class (ng-class)
   - [ ] Implement Delete
