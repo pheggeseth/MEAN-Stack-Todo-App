@@ -18,12 +18,10 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // get data with req.body
-  // for posting to MongoDB, use something like...
-  // const modelToAdd = new Model(req.body);
-  // modelToAdd.save()
-  //  .then(() => res.sendStatus(201))
-  //  .catch(error => res.sendStatus(500));
+  const newTodo = new Todo(req.body);
+  newTodo.save()
+   .then(() => res.sendStatus(201))
+   .catch(error => res.sendStatus(500));
 });
 
 router.put('/:id', (req, res) => {
