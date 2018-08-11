@@ -15,6 +15,11 @@
   <div class="container" ng-controller="TodoController as tc">
     <form ng-submit="tc.addNewTodo()">
       <input type="text" name="text" id="textInput" placeholder="Add Todo Here" ng-model="tc.newTodo.text" />
+      <select name="category" ng-model="tc.newTodo.category">
+        <option value="">Category:</option>
+        <option value="Home">Home</option>
+        <option value="Work">Work</option>
+      </select>
       <button>Add Todo</button>
     </form>
     <ul id="todo-list">
