@@ -57,7 +57,7 @@ Steps to get the development environment running.
 ### Stretch Goals
 
 - [ ] add Bootstrap to the page
-- [ ] create a confirmation prompt upon todo delete
+- [x] create a confirmation prompt upon todo delete
 - [x] move inputs into form with ng-submit
 - [x] add input validation to form
 - [ ] add category field to form
