@@ -30,7 +30,7 @@ Steps to get the development environment running.
       - [x] successfully get all todos from database
     - [x] store todos from database in controller array
   - [x] show all todos with ng-repeat on the DOM (unordered list)
-- [ ] It should be able to add a new todo
+- [x] It should be able to add a new todo
   - [x] create HTML form
     - [x] Input field for todo text
     - [x] Submit button
@@ -39,5 +39,18 @@ Steps to get the development environment running.
     - [x] write todos POST route in todos.router.js
       - [x] successfully get data from POST request
       - [x] save POST data to database
-  - [ ] get all todos after successfully adding new todo
+  - [x] get all todos after successfully adding new todo
+- [ ] It should be able to 'Complete' and 'Delete' each todo
+  - [ ] add Complete and Delete buttons to each list item
+  - [ ] Implement Complete
+    - [ ] clicking the Complete button should call completeTodo function, passing in the todo ID
+    - [ ] completeTodo function should start HTTP PUT request
+      - [ ] completeTodo PUT request should pass the ID to the server as data
+    - [ ] server should have a route for /todos PUT request
+      - [ ] get the right todo from the database by id
+      - [ ] change the todo.completed to true
+      - [ ] save the todo back in the database
+    - [ ] upon todo PUT success, get all todos
+    - [ ] completed todos should add "completed" class (ng-class)
+  - [ ] Implement Delete
       
