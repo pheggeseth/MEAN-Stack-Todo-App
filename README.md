@@ -23,7 +23,7 @@ Steps to get the development environment running.
 - [x] Determine the Schema of the todo for MongoDB
 - [x] Configure todos.router.js with the appropriate schema and model for todos
 - [x] Setup AngularJS app
-- [ ] It should be able to display all todos
+- [x] It should be able to display all todos
   - [x] make function to get all todos
     - [x] make HTTP GET request for all todos
     - [x] write todos GET route in todos.router.js
@@ -31,10 +31,10 @@ Steps to get the development environment running.
     - [x] store todos from database in controller array
   - [x] show all todos with ng-repeat on the DOM (unordered list)
 - [ ] It should be able to add a new todo
-  - [ ] create HTML form
-    - [ ] Input field for todo text
-    - [ ] Submit button
-    - [ ] submit event should trigger submit handler function
+  - [x] create HTML form
+    - [x] Input field for todo text
+    - [x] Submit button
+    - [x] submit event should trigger submit handler function
   - [ ] submit handler function should trigger HTTP POST request
     - [ ] write todos POST route in todos.router.js
       - [ ] successfully get data from POST request
