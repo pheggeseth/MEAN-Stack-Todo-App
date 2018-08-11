@@ -1,6 +1,11 @@
 const consoleLogs = false;
 const todoApp = angular.module('todoApp', []);
 
+document.addEventListener('DOMContentLoaded', function() {
+  swal("Hello world!");
+});
+
+
 todoApp.controller('TodoController', function($http) {
   vm = this;
 
