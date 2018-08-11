@@ -59,7 +59,7 @@ Steps to get the development environment running.
 - [ ] add Bootstrap to the page
 - [ ] create a confirmation prompt upon todo delete
 - [x] move inputs into form with ng-submit
-- [ ] add input validation to form
+- [x] add input validation to form
 - [ ] add category field to form
   - [ ] allow user to filter by category
 - [ ] have completed tasks be brought to bottom of page
