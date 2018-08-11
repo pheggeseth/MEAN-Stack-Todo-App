@@ -24,7 +24,7 @@
     </form>
     <ul id="todo-list">
       <li ng-class="{completed: todo.completed}" ng-repeat="todo in tc.todos">
-        {{todo.text}}
+        {{todo.category}}: {{todo.text}}
         <button ng-click="tc.completeTodo(todo._id)">Complete</button>
         <button ng-click="tc.handleDeleteClick(todo._id)">Delete</button>
       </li>
