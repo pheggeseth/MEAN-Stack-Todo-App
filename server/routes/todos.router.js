@@ -3,17 +3,18 @@ const router = express.Router();
 const mongoose = require('mongoose');
 
 // MONGODB SCHEMA AND MODEL
-// const Schema = mongoose.Schema;
-// const modelSchema = new Schema({
-//   property: {type: String, Number, etc.}
-// });
-// const Model = mongoose.model('modelName', modelSchema);
+const Schema = mongoose.Schema;
+const todoSchema = new Schema({
+  text: {type: String},
+  completed: {type: Boolean}
+});
+const Todo = mongoose.model('Todo', todoSchema);
 
 // get route params with "/route/:paramName, then reference it as req.params.paramName"
 router.get('/', (req, res) => {
-  model.find({}) // or something like model.find({amount: {$gt: something, $lt: something}})
-    .then(models => res.send(models))
-    .catch(error => res.sendStatus(500));
+  // model.find({}) // or something like model.find({amount: {$gt: something, $lt: something}})
+  //   .then(models => res.send(models))
+  //   .catch(error => res.sendStatus(500));
 });
 
 router.post('/', (req, res) => {

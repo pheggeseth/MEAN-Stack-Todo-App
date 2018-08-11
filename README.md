@@ -1,10 +1,10 @@
-# Name of Application
+# AngularJS ToDo List App
 
-One Paragraph of project description goes here. Link to the live version of the app if it's hosted on Heroku.
+The third weekend challenge for Prime Digital Academy is to create a todo application using AngularJS and the MEAN stack.
 
 ## Built With
 
-List technologies and frameworks here
+MongoDB, AngularJS, Express, Node.js
 
 ## Getting Started
 
@@ -18,30 +18,25 @@ Steps to get the development environment running.
 2. `npm install`
 3. `npm start`
 
-And so on...
+### Checklist
 
-## Screen Shot
-
-Include one or two screen shots of your project here (optional). Remove if unused.
-
-### Completed Features
-
-High level list of items completed.
-
-- [x] Feature a
-- [x] Feature b
-
-### Next Steps
-
-Features that you would like to add at some point in the future.
-
-- [ ] Feature c
-
-## Authors
-
-* Name of author(s)
-
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
+- [x] Determine the Schema of the todo for MongoDB
+- [x] Configure todos.router.js with the appropriate schema and model for todos
+- [ ] Setup AngularJS app
+- [ ] It should be able to display all todos
+  - [ ] make function to get all todos
+    - [ ] make HTTP GET request for all todos
+    - [ ] write todos GET route in todos.router.js
+      - [ ] successfully get all todos from database
+    - [ ] store todos from database in controller array to display on the DOM
+  - [ ] show all todos with ng-repeat on the DOM (unordered list)
+- [ ] It should be able to add a new todo
+  - [ ] create HTML form
+    - [ ] Input field for todo text
+    - [ ] Submit button
+    - [ ] submit event should trigger submit handler function
+  - [ ] submit handler function should trigger HTTP POST request
+    - [ ] write todos POST route in todos.router.js
+      - [ ] successfully get data from POST request
+      - [ ] save POST data to database
+      
