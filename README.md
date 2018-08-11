@@ -60,7 +60,7 @@ Steps to get the development environment running.
 - [x] create a confirmation prompt upon todo delete
 - [x] move inputs into form with ng-submit
 - [x] add input validation to form
-- [ ] add category field to form
+- [x] add category field to form
   - [ ] allow user to filter by category
 - [ ] have completed tasks be brought to bottom of page
       
