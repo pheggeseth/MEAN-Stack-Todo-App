@@ -16,8 +16,8 @@
       <input type="text" name="text" id="textInput" ng-model="tc.newTodo.text" />
       <button>Add Todo</button>
     </form>
-    <ul>
-      <li ng-repeat="todo in tc.todos">
+    <ul id="todo-list">
+      <li ng-class="{completed: todo.completed}" ng-repeat="todo in tc.todos">
         {{todo.text}}
         {{todo.completed}}
         <button ng-click="tc.completeTodo(todo._id)">Complete</button>
