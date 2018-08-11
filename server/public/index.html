@@ -12,6 +12,10 @@
 <body ng-app="todoApp">
   Hello world
   <div class="container" ng-controller="TodoController as tc">
+    <form ng-submit="tc.addNewTodo()">
+      <input type="text" name="text" id="textInput" ng-model="tc.newTodo.text" />
+      <button>Add Todo</button>
+    </form>
     <ul>
       <li ng-repeat="todo in tc.todos">
         {{todo.text}}
