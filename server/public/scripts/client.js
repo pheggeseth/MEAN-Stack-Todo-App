@@ -12,7 +12,6 @@ todoApp.controller('TodoController', function($http) {
     }).then(function(response) {
       console.log('/todos GET success:', response.data);
       vm.todos = response.data;
-      console.log(vm.todos);
     }).catch(function(error) {
       console.log('/todos GET error:', error);
     });
@@ -58,6 +57,7 @@ todoApp.controller('TodoController', function($http) {
       url: '/todos/delete/' + id
     }).then(function(response) {
       console.log('/todos DELETE success:', response);
+      vm.getTodosFromDB();
     }).catch(function(error) {
       console.log('/todos DELETE error:', response);
     });
