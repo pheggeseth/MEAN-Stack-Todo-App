@@ -1,5 +1,5 @@
 const consoleLogs = true;
-const todoApp = angular.module('todoApp', []);
+const todoApp = angular.module('todoApp', ['ngAnimate']);
 
 todoApp.controller('TodoController', function($http) {
   vm = this;
@@ -34,8 +34,9 @@ todoApp.controller('TodoController', function($http) {
       data: vm.newTodo
     }).then(function(response) {
       if(consoleLogs) console.log('/todos POST success:', response);
-      vm.newTodo = {};
-      vm.getTodosFromDB();
+      //vm.newTodo = {};
+      //vm.getTodosFromDB();
+      vm.todos.push(response.data);
     }).catch(function(error) {
       if(consoleLogs) console.log('/todos POST error:', error);
     });
@@ -55,15 +56,16 @@ todoApp.controller('TodoController', function($http) {
   };
 
   vm.handleDeleteClick = function(id) {
-    swal({
-      title: "Are you sure?",
-      text: "Deleting a todo is permanent. No take backs!",
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    }).then(deleteConfirmed => {
-      if (deleteConfirmed) deleteTodo(id);
-    });
+    // swal({
+    //   title: "Are you sure?",
+    //   text: "Deleting a todo is permanent. No take backs!",
+    //   icon: "warning",
+    //   buttons: true,
+    //   dangerMode: true,
+    // }).then(deleteConfirmed => {
+    //   if (deleteConfirmed) deleteTodo(id);
+    // });
+    deleteTodo(id);
   }
 
   function deleteTodo(id) {

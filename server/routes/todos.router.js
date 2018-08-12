@@ -25,7 +25,8 @@ router.post('/', (req, res) => {
   if(consoleLogs) console.log('/todos POST:', req.body);
   const newTodo = new Todo(req.body);
   newTodo.save()
-   .then(() => res.sendStatus(201))
+   //.then(() => res.sendStatus(201))
+   .then(() => res.send(newTodo)) // sending newTodo back so it can be pushed into todos controller array
    .catch(error => res.sendStatus(500));
 });
 

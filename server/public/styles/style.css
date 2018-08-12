@@ -1,3 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+}
+.container {
+  height: 100%;
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid;
+}
+
+ul {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.list-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.list-item.ng-enter {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.list-item.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.checkbox {
+  height: 30px;
+  width: 30px;
+  border: 1px solid;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.checkbox:hover {
+  background-color: #eee;
+}
+
+.checkmark {
+  height: 15px;
+  width: 5px;
+  border: solid;
+  border-width: 0 2px 2px 0;
+  position: relative;
+  top: 4px;
+  left: 11px;
+  transform: rotate(35deg);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.checkbox.completed, .checkmark.completed {
+  background-color: #ccc;
+  opacity: 1;
+}
+
 .completed {
   text-decoration: line-through;
 }

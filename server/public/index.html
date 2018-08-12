@@ -5,24 +5,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>AngularJS Todo App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   <link rel="stylesheet" type="text/css" media="screen" href="./styles/style.css" />
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="./vendors/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-animate.js"></script>
   <script src="./scripts/client.js"></script>
 </head>
 <body ng-app="todoApp">
   <div class="container" ng-controller="TodoController as tc">
-    <h1>AngularJs ToDo App</h1>
+    <h2>AngularJS ToDo App</h2>
     Filter: <select name="category-filter" ng-model="tc.categoryFilter">
       <option value="">none</option>
       <option value="Home">Home</option>
       <option value="Work">Work</option>
     </select>
     <ul id="todo-list">
-      <li ng-class="{completed: todo.completed}" ng-repeat="todo in tc.todos | filter:{category: tc.categoryFilter} | orderBy:'completed'">
-        <input type="checkbox" ng-model="todo.completed" ng-change="tc.completeTodo(todo._id)">
+      <li class="list-item" ng-class="{completed: todo.completed}" ng-repeat="todo in tc.todos | filter:{category: tc.categoryFilter} | orderBy:'completed'">
+        <div class="checkbox" ng-class="{completed: todo.completed}" ng-click="tc.completeTodo(todo._id)">
+          <div class="checkmark" ng-class="{completed: todo.completed}"></div>
+        </div>
         {{todo.category}}: {{todo.text}}
-        <!-- <button ng-click="tc.completeTodo(todo._id)">Complete</button> -->
         <button ng-click="tc.handleDeleteClick(todo._id)">X</button>
       </li>
     </ul>
