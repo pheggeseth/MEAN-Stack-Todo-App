@@ -33,7 +33,7 @@ router.put('/complete/:id', (req, res) => {
   if(consoleLogs) console.log('/todos/complete PUT:', req.params.id);
   Todo.findOne({_id: req.params.id})
     .then(foundTodo => {
-      foundTodo.completed = true;
+      foundTodo.completed = !foundTodo.completed;
       foundTodo.save()
         .then(response => res.sendStatus(201))
         .catch(error => res.sendStatus(500));

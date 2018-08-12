@@ -13,16 +13,6 @@
 <body ng-app="todoApp">
   <div class="container" ng-controller="TodoController as tc">
     <h1>AngularJs ToDo App</h1>
-    <h2>Add New Todo</h2>
-    <form ng-submit="tc.addNewTodo()">
-      <input type="text" name="text" id="textInput" placeholder="Add Todo Here" ng-model="tc.newTodo.text" />
-      <select name="category" ng-model="tc.newTodo.category">
-        <option value="Home">Home</option>
-        <option value="Work">Work</option>
-      </select>
-      <button>Add Todo</button>
-    </form>
-    <h2>Todo List</h2>
     Filter: <select name="category-filter" ng-model="tc.categoryFilter">
       <option value="">none</option>
       <option value="Home">Home</option>
@@ -30,11 +20,21 @@
     </select>
     <ul id="todo-list">
       <li ng-class="{completed: todo.completed}" ng-repeat="todo in tc.todos | filter:{category: tc.categoryFilter} | orderBy:'completed'">
+        <input type="checkbox" ng-model="todo.completed" ng-change="tc.completeTodo(todo._id)">
         {{todo.category}}: {{todo.text}}
-        <button ng-click="tc.completeTodo(todo._id)">Complete</button>
-        <button ng-click="tc.handleDeleteClick(todo._id)">Delete</button>
+        <!-- <button ng-click="tc.completeTodo(todo._id)">Complete</button> -->
+        <button ng-click="tc.handleDeleteClick(todo._id)">X</button>
       </li>
     </ul>
+    <form ng-submit="tc.addNewTodo()">
+        <input type="text" name="text" id="textInput" placeholder="Add Todo Here" ng-model="tc.newTodo.text" />
+        <select name="category" ng-model="tc.newTodo.category">
+          <option value="" selected disabled hidden>Category</option>
+          <option value="Home">Home</option>
+          <option value="Work">Work</option>
+        </select>
+        <button>Add Todo</button>
+      </form>
   </div>
 </body>
 </html>
