@@ -34,7 +34,7 @@ todoApp.controller('TodoController', function($http) {
       data: vm.newTodo
     }).then(function(response) {
       if(consoleLogs) console.log('/todos POST success:', response);
-      //vm.newTodo = {};
+      vm.newTodo = {};
       //vm.getTodosFromDB();
       vm.todos.push(response.data);
     }).catch(function(error) {
@@ -42,14 +42,17 @@ todoApp.controller('TodoController', function($http) {
     });
   };
 
-  vm.completeTodo = function(id) {
+  vm.toggleTodoCompleted = function(id) {
     if(consoleLogs) console.log('complete todo:', id);
     $http({
       method: 'PUT',
       url: '/todos/complete/' + id
     }).then(function(response) {
       if(consoleLogs) console.log('/todos PUT success:', response);
-      vm.getTodosFromDB();
+      //vm.getTodosFromDB();
+      for(let i = 0; i < vm.todos.length; i++) {
+        if (vm.todos[i]._id === id) vm.todos.splice(i, 1, response.data);
+      }
     }).catch(function(error) {
       if(consoleLogs) console.log('/todos PUT error:', error);
     });

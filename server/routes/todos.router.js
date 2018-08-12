@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
   const newTodo = new Todo(req.body);
   newTodo.save()
    //.then(() => res.sendStatus(201))
-   .then(() => res.send(newTodo)) // sending newTodo back so it can be pushed into todos controller array
+   .then(response => res.send(newTodo)) // sending newTodo back so it can be pushed into todos controller array
    .catch(error => res.sendStatus(500));
 });
 
@@ -36,7 +36,8 @@ router.put('/complete/:id', (req, res) => {
     .then(foundTodo => {
       foundTodo.completed = !foundTodo.completed;
       foundTodo.save()
-        .then(response => res.sendStatus(201))
+        //.then(response => res.sendStatus(201))
+        .then(response => res.send(foundTodo))
         .catch(error => res.sendStatus(500));
     }).catch(error => res.sendStatus(500));
 });
