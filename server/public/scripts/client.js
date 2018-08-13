@@ -35,6 +35,8 @@ todoApp.controller('TodoController', function($http) {
     }).then(function(response) {
       if(consoleLogs) console.log('/todos POST success:', response);
       vm.newTodo = {};
+      // I stopped emptying the todo list after each change, as I'm now using ng-repeat animations
+      // to fade in specific list items when they change
       //vm.getTodosFromDB();
       vm.todos.push(response.data);
     }).catch(function(error) {
@@ -59,15 +61,15 @@ todoApp.controller('TodoController', function($http) {
   };
 
   vm.handleDeleteClick = function(id) {
-    // swal({
-    //   title: "Are you sure?",
-    //   text: "Deleting a todo is permanent. No take backs!",
-    //   icon: "warning",
-    //   buttons: true,
-    //   dangerMode: true,
-    // }).then(deleteConfirmed => {
-    //   if (deleteConfirmed) deleteTodo(id);
-    // });
+    swal({
+      title: "Are you sure?",
+      text: "Deleting a todo is permanent. No take backs!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then(deleteConfirmed => {
+      if (deleteConfirmed) deleteTodo(id);
+    });
     deleteTodo(id);
   }
 
@@ -78,7 +80,9 @@ todoApp.controller('TodoController', function($http) {
       url: '/todos/delete/' + id
     }).then(function(response) {
       if(consoleLogs) console.log('/todos DELETE success:', response);
-      vm.getTodosFromDB();
+      //vm.getTodosFromDB();
+      let index = vm.todos.findIndex(todo => todo._id === id);
+      vm.todos.splice(index, 1);
     }).catch(function(error) {
       if(consoleLogs) console.log('/todos DELETE error:', response);
     });

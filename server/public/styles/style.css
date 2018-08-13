@@ -25,18 +25,30 @@ ul {
 
 .list-item.ng-enter {
   opacity: 0;
-  transition: all 0.7s ease;
+  transition: all 0.8s ease;
 }
 
 .list-item.ng-enter-active {
   opacity: 1;
 }
 
+.list-item.ng-leave {
+  transition: all 0.8s ease;
+  opacity: 1;
+}
+.list-item.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+}
+/* yes, I did make this custom checkbox myself */
 .checkbox {
   height: 30px;
   width: 30px;
   margin-right: 10px;
-  border: 1px solid;
+  border: 1px solid rgb(103, 113, 122);
   background-color: #fff;
   border-radius: 50%;
   display: inline-block;
@@ -63,8 +75,4 @@ ul {
 .checkbox.completed, .checkmark.completed {
   background-color: rgb(103, 113, 122);
   opacity: 1;
-}
-
-.todo-text.completed {
-  text-decoration: line-through;
 }
