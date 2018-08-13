@@ -1,4 +1,4 @@
-const consoleLogs = true;
+const consoleLogs = false;
 const todoApp = angular.module('todoApp', ['ngAnimate']);
 
 todoApp.controller('TodoController', function($http) {
@@ -52,9 +52,8 @@ todoApp.controller('TodoController', function($http) {
     }).then(function(response) {
       if(consoleLogs) console.log('/todos PUT success:', response);
       //vm.getTodosFromDB();
-      for(let i = 0; i < vm.todos.length; i++) {
-        if (vm.todos[i]._id === id) vm.todos.splice(i, 1, response.data);
-      }
+      let index = vm.todos.findIndex(todo => todo._id === id);
+      vm.todos.splice(index, 1, response.data);
     }).catch(function(error) {
       if(consoleLogs) console.log('/todos PUT error:', error);
     });
@@ -70,7 +69,6 @@ todoApp.controller('TodoController', function($http) {
     }).then(deleteConfirmed => {
       if (deleteConfirmed) deleteTodo(id);
     });
-    deleteTodo(id);
   }
 
   function deleteTodo(id) {
