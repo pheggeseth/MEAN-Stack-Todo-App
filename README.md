@@ -1,4 +1,4 @@
-# AngularJS ToDo List App
+# MEAN Stack Todo Application
 
 The third weekend challenge for Prime Digital Academy was to create a todo application using AngularJS and the MEAN stack. The application uses a MongoDB database to store a collection of all todos. A new todo may be added by inputting text as well as a category. The new todo is then stored on the database and appended to the list of todos stored in the AngularJS controller and rendered by AngularJS. Each todo in the list may be completed or deleted, and these state changes are automatically reflected in the database.
 
