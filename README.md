@@ -1,10 +1,12 @@
 # AngularJS ToDo List App
 
-The third weekend challenge for Prime Digital Academy is to create a todo application using AngularJS and the MEAN stack.
+The third weekend challenge for Prime Digital Academy was to create a todo application using AngularJS and the MEAN stack. The application uses a MongoDB database to store a collection of all todos. A new todo may be added by inputting text as well as a category. The new todo is then stored on the database and appended to the list of todos stored in the AngularJS controller and rendered by AngularJS. Each todo in the list may be completed or deleted, and these state changes are automatically reflected in the database.
+
+Optional stretch goals that were implemented as part of this project were the ability to filter the displayed list of todos by the todo category, a todo delete confirmation modal using Sweetalert, simple input validation upon submit, and the use of Bootstrap CSS. I also implemented a custom-made checkbox as well as limited CSS animations via ngAnimate.
 
 ## Built With
 
-MongoDB, AngularJS, Express, Node.js
+MongoDB, AngularJS, Express, Node.js, Sweetalert
 
 ## Getting Started
 
@@ -18,7 +20,9 @@ Steps to get the development environment running.
 2. `npm install`
 3. `npm start`
 
-### Checklist
+## Checklist
+
+This was how I scoped out the assignment into major tasks and subtasks.
 
 - [x] Determine the Schema of the todo for MongoDB
 - [x] Configure todos.router.js with the appropriate schema and model for todos
@@ -52,11 +56,11 @@ Steps to get the development environment running.
       - [x] save the todo back in the database
     - [x] upon todo PUT success, get all todos
     - [x] completed todos should add "completed" class (ng-class)
-  - [x] Implement Delete
+  - [x] Implement Delete (largely the same process and implementing the complete feature)
 
 ### Stretch Goals
 
-- [ ] add Bootstrap to the page
+- [x] add Bootstrap to the page
 - [x] create a confirmation prompt upon todo delete
 - [x] move inputs into form with ng-submit
 - [x] add input validation to form

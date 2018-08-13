@@ -6,7 +6,7 @@ todoApp.controller('TodoController', function($http) {
 
   vm.todos = [];
   vm.newTodo = {};
-
+  
   vm.getTodosFromDB = function() {
     $http({
       method: 'GET',

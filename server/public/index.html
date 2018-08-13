@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>ANGULARJS TODO APP</title>
+  <title>MEAN Stack Todo App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./vendors/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" media="screen" href="./styles/style.css" />
@@ -16,8 +16,8 @@
 
 <body ng-app="todoApp">
   <div class="container" ng-controller="TodoController as tc">
-    <h2>ANGULARJS TODO APP</h2>
-    <select class="custom-select custom-select-sm" ng-model="tc.categoryFilter">
+    <h2>MEAN STACK TODO APP</h2>
+    <select class="custom-select custom-select-sm shadow-sm" ng-model="tc.categoryFilter">
       <option value="">Filter:</option>
       <option value="Home">Home</option>
       <option value="Work">Work</option>
@@ -32,7 +32,7 @@
       </li>
     </ul>
     <form ng-submit="tc.addNewTodo()">
-      <div class="input-group input-group-sm mt-4">
+      <div class="input-group input-group-sm mt-4 shadow-sm">
         <select class="custom-select custom-select-sm" id="categorySelect" ng-model="tc.newTodo.category">
           <option value="" selected disabled hidden>Category</option>
           <option value="Home">Home</option>
